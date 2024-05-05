@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,8 +88,8 @@
 <body>
 
 <header>
-  <img src="https://cdn.jsdelivr.net/gh/Egduffuu/ExtHanger@main/favicon.png" alt="Logo" class="logo">
-  <h1>ExtHanger</h1>
+  <img src="https://www.pps.net/cms/lib/OR01913224/Centricity/Domain/57/securly-180x180.png" alt="Logo" class="logo">
+  <h1>Securly Disable</h1>
 </header>
 
 <div class="container">
@@ -96,10 +97,11 @@
   <label for="iframeSelect">Select extension:</label>
   <select id="iframeSelect">
     <option value="chrome-extension://iheobagjkfklnlikgihanlhcddjoihkg/fonts/Metropolis.css">Securly</option>
-    
+  </select>
   <button onclick="warning();">Hang Extension!</button>
 </div>
 
+<div class="overlay" id="overlay">Hanging...</div>
 
 <div class="kill-extension-text" id="killExtensionText">
 </div>
@@ -177,10 +179,10 @@
         setTimeout(function() {
           if (blankTab && !blankTab.closed) {
             blankTab.close();
-            alert(selectedOption + " was hanged successfully! Now that it has been hanged, instructions for how to kill it and restore it are below.");
+            alert("securly was hanged successfully! Now that it has been hanged, instructions for how to kill it and restore it are below.");
             window.document.getElementById("overlay").style.display = "none";
             var extensionId = selectedSrc.substring(selectedSrc.indexOf("//") + 2, selectedSrc.indexOf("/", selectedSrc.indexOf("//") + 2));
-            window.document.getElementById("killExtensionText").innerHTML = "To kill securly " + selectedOption + ", open a new tab and go to <strong>chrome://extensions/?id=" + extensionId + "</strong>. Then flip the allow access to file URLs switch. Now you can close that tab as well as this one. If you want to restore (unhang) the extension, open the window called Open to Restore and then that window should close itself restoring the extension in the process.";
+            window.document.getElementById("killExtensionText").innerHTML = "To kill the extension " + selectedOption + ", open a new tab and go to <strong>chrome://extensions/?id=" + extensionId + "</strong>. Then flip the allow access to file URLs switch. Now you can close that tab as well as this one. If you want to restore (unhang) the extension, open the window called Open to Restore and then that window should close itself restoring the extension in the process.";
             window.document.getElementById("killExtensionText").style.display = "block";
             popupDocument.addEventListener('mouseover', function() {
    		popup.close();
